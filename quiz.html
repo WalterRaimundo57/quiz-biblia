@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Bíblico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Literata:opsz,wght@7..72,500;7..72,700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section id="menu" class="card">
+    <h1>Quiz Bíblico</h1>
+    <p style="margin-top:14px">Escolha um modo de jogo. Cada pergunta tem 4 alternativas e mostra a referência bíblica da resposta.</p>
+    <div class="modes">
+      <button class="mode" id="m-padrao"><strong>Modo padrão</strong><span>10 perguntas sorteadas. No fim, você vê sua pontuação.</span></button>
+      <button class="mode" id="m-infinito"><strong>Modo sem fim</strong><span>Responda até errar 3 vezes. Veja quantas perguntas você acerta.</span></button>
+    </div>
+  </section>
+
+  <section id="game" class="card hide" aria-live="polite">
+    <div class="bar" id="progwrap"><i id="prog"></i></div>
+    <div class="meta">
+      <span id="count"></span>
+      <span class="right"><span id="lives" role="img"></span><span id="pts"></span><button class="link" id="quit">Menu</button></span>
+    </div>
+    <h2 id="q"></h2>
+    <ul class="opts" id="opts"></ul>
+    <div id="fb" class="fb hide" role="status"></div>
+    <button class="primary next hide" id="next">Próxima pergunta</button>
+  </section>
+
+  <section id="end" class="card hide">
+    <h2>Resultado</h2>
+    <p class="mode-name" id="mode-name"></p>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <p class="record hide" id="record"></p>
+    <div class="actions">
+      <button class="primary" id="again">Jogar de novo</button>
+      <button class="ghost" id="to-menu">Menu principal</button>
+    </div>
+  </section>
+</main>
+<script src="quiz.js"></script>
+</body>
+</html>
